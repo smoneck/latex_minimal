@@ -1,0 +1,41 @@
+% \codeFromFile([minted settings]){language}{file}{Title}{label}{additional tcolorbox settings}
+\par\begin{wrapfigure}{R}[1.5cm]{5.5cm}
+  %
+  \centering
+  %
+  % Installation
+  %
+  \begin{tcolorbox}[size=fbox,title={\centering\scriptsize Installation},before upper=\scriptsize]
+    \begin{tabularx}{\linewidth}{lX}
+      Linux & \ttfamily apt-get install texlive-full\\
+      MacOS & See \url{goo.gl/UMzDfV}\\
+      Windows & See \url{goo.gl/Z19eiz}
+    \end{tabularx}
+  \end{tcolorbox}
+  %
+  % Mare Minimum Setup
+  %
+  \codeFromFile{latex}{minimal.tex}{Bare Minimum}{minimal}{listing and comment, comment={\scriptsize Compilation:\\\texttt{pdflatex yourdocument.tex}}}
+  %
+  % Classes
+  %
+  \begin{tcolorbox}[size=fbox,title={\centering\scriptsize\ttfamily Classes},before upper=\scriptsize]
+    \begin{tabularx}{\linewidth}{>{\ttfamily}lX}
+      scrartcl & Small documents, short articles/reports\\
+      scrreprt &  Longer reports, seminar papers, smaller theses\\
+      scrbook  & Long works like books or dissertations\\
+      scrlttr2 &  Letters
+    \end{tabularx}
+  \end{tcolorbox}
+  %
+  % Important Options
+  %
+  \begin{tcolorbox}[size=fbox,title={\centering\scriptsize Important \texttt{Options}},before upper=\scriptsize]
+    \begin{tabularx}{\linewidth}{lX}
+      \texttt{paper}& \ttfamily a4, a5, letter, \ldots\\
+      \texttt{BOCR}& \ttfamily Longer reports, seminar papers, smaller theses\\
+      \texttt{DIV}& \ttfamily Long works like books or dissertations\\
+      \texttt{fontsize}& \ttfamily 8pt, 9pt, 10pt, \ldots
+    \end{tabularx}
+  \end{tcolorbox}
+\end{wrapfigure}

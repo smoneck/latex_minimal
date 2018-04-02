@@ -1,0 +1,82 @@
+\documentclass[%
+  fontsize=12pt,%
+  paper=a4,%
+  headinclude=false,%
+  foodinclude=false,%
+  DIV=16%
+]{scrartcl}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{etex}
+\usepackage[komastyle]{scrpage2}
+\usepackage[greek,english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amssymb,amsmath,amsfonts}
+\usepackage{enumerate, enumitem}
+\usepackage{wrapfig,enumitem,tabularx}
+\usepackage[all]{tcolorbox}
+
+% Frame around page
+\usepackage{tikz}
+\usetikzlibrary{calc,shapes}
+\usetikzlibrary{decorations.pathmorphing}
+
+% Maybe unnecessary
+\usepackage{siunitx}
+\DeclareSIUnit\point{pt}
+
+% Tcolorbox and minted configuration
+\setminted[latex]{autogobble,fontsize=\scriptsize,linenos=false,breaklines}
+
+\tcbset{%
+  fonttitle=\bfseries,
+  size=fbox,
+  boxsep=2.0pt,
+  arc=1mm,
+  colback=white,
+  colframe=red!75!black}
+
+\newtcbinputlisting[]{\codeFromFile}[6][]{%
+  listing engine=minted,
+  minted options={#1},
+  minted language=#2,
+  listing file={#3},
+  title={\scriptsize\centering #4},
+  label=#5,
+  listing only,
+  breakable,
+  #6
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Redefine footnotes. Maybe unnecessary
+\makeatletter
+\renewcommand{\@makefnmark}{\makebox{\normalfont[\@thefnmark]}}
+\makeatother
+
+% Custom smaller \maketitle
+\makeatletter
+\renewcommand{\maketitle}{
+  \begin{center}
+    \usekomafont{title}{\huge \@title\par}
+    \vskip 1em
+    \usekomafont{title}{\@subtitle}
+  \end{center}
+  \par
+  \vskip 2em
+  }
+\makeatother
+
+% Background frame
+\newcommand{\backgroundframe}{
+  \begin{tikzpicture}[overlay,remember picture]
+    \draw [line width=1pt]
+      %,segment length=<length>,amplitude=<length>
+      ($ (current page.north west) + (1cm,-1cm) $)
+      rectangle
+      ($ (current page.south east) + (-1cm,1cm) $);
+  \end{tikzpicture}
+  }
+
