@@ -1,6 +1,8 @@
 % \codeFromFile([minted settings]){language}{file}{Title}{label}{additional tcolorbox settings}
-\par\begin{wrapfigure}{R}[1.5cm]{5.5cm}
+\par\begin{wrapfigure}{r}[1.5cm]{6cm}
   %
+  % TODO: dirty
+  \vskip -5ex
   \centering
   %
   % Installation
@@ -37,9 +39,62 @@
   \begin{tcolorbox}[size=fbox,title={\centering\scriptsize Important \texttt{Options}},before upper=\scriptsize]
     \begin{tabularx}{\linewidth}{lX}
       \texttt{paper}& \ttfamily a4, a5, letter, \ldots\\
-      \texttt{BOCR}& \ttfamily Longer reports, seminar papers, smaller theses\\
-      \texttt{DIV}& \ttfamily Long works like books or dissertations\\
-      \texttt{fontsize}& \ttfamily 8pt, 9pt, 10pt, \ldots
+      \texttt{BCOR}& \ttfamily   \SI{8.25}{\milli\metre}, \SI{10}{\point}, \ldots\\
+      & Reserved space (binding correction) on inner margins.\\
+      \texttt{DIV}& \ttfamily calc, classic, 8, 9, \ldots\\
+       & Number of segments the page is divided in (below).\\
+      \texttt{fontsize}& \ttfamily 8pt, 9pt, 10pt, \ldots\\
+      \texttt{twoside}& \ttfamily true, false
     \end{tabularx}
+  \end{tcolorbox}
+  %
+  % Classes
+  %
+  \begin{tcolorbox}[halign=center,size=fbox,title={\centering\scriptsize type area (\texttt{DIV=9})},before upper=\scriptsize]
+    \setlength{\unitlength}{.235mm}
+    \definecolor{komalight}{gray}{.75}
+    \definecolor{komamed}{gray}{.6}
+    \definecolor{komadark}{gray}{.3}
+    \begin{picture}(244,297)
+
+      %%%% BCOR box
+      \put(198,0){\color{komalight}\rule{24\unitlength}{297\unitlength}}
+      % Dashed line
+      \multiput(198,2)(0,20){15}{\thinlines\line(0,1){10}}
+      \multiput(222,2)(0,20){15}{\thinlines\line(0,1){10}}
+
+      %%%% page left
+      % box page layout
+      \put(44,66){\color{komamed}\rule{132\unitlength}{198\unitlength}}
+      % horiz. lines left
+      \multiput(0,33)(0,33){8}{\thinlines\line(1,0){198}}
+      % vert. lines left
+      \multiput(22,0)(22,0){8}{\thinlines\line(0,1){297}}
+
+
+      %%%% page right
+      % horiz. right right
+      \multiput(222,33)(0,33){8}{\thinlines\line(1,0){22}}
+      % Dashed line right
+      \multiput(244,0)(0,5){60}{\thinlines\line(0,1){2.5}}
+
+      %%%% outer thick lines
+      \put(0,0){\thicklines\line(0,1){297}}
+      \put(0,0){\thicklines\line(1,0){244}}
+      \put(0,297){\thicklines\line(1,0){244}}
+
+      %%%% annotations
+      \put(198,0){\color{white}\makebox(24,297)[c]{%
+        \rotatebox[origin=c]{-90}{binding correction (\texttt{BCOR})}}}
+      \put(44,66){\color{white}\makebox(132,198)[c]{page layout left}}
+
+      %%%% box numbers left
+      \makeatletter
+      \multiput(1,27)(0,33){9}{\makebox(0,0)[l]{\the\@multicnt}}
+      \multiput(177,291)(-22,0){9}{%
+        \makebox(0,0)[l]{\the\@multicnt}}
+      \put(243,291){\makebox(0,0)[r]{9}}
+      \makeatother
+    \end{picture}
   \end{tcolorbox}
 \end{wrapfigure}
