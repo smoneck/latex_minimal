@@ -9,7 +9,7 @@
   %
   \begin{tcolorbox}[size=fbox,title={\centering\scriptsize Installation},before upper=\scriptsize]
     \begin{tabularx}{\linewidth}{lX}
-      Linux & \ttfamily apt-get install texlive-full\\
+      Linux & \ttfamily apt install texlive-full\\
       MacOS & See \url{goo.gl/UMzDfV}\\
       Windows & See \url{goo.gl/Z19eiz}
     \end{tabularx}
@@ -21,7 +21,7 @@
   %
   % Minimal Working Example
   %
-  \codeFromFile{latex}{material/mwe.tex}{\href{https://en.wikipedia.org/wiki/Minimal_Working_Example}{Minimum Working Example}}{mwe}{listing and comment, comment={\scriptsize Compilation:\\\texttt{pdflatex yourdocument.tex}}}
+  \codeFromFile{latex}{material/mwe.tex}{\href{https://en.wikipedia.org/wiki/Minimal_Working_Example}{Minimum Working Example}}{mwe}{listing and comment, comment={\scriptsize Compilation: \texttt{pdflatex yourdocument.tex}}}
   %
   % Classes
   %
@@ -44,6 +44,7 @@
       \texttt{DIV}& \ttfamily calc, classic, 8, 9, \ldots\\
        & Number of segments the page is divided in (below).\\
       \texttt{fontsize}& \ttfamily 8pt, 9pt, 10pt, \ldots\\
+      \texttt{twocolumn}& \ttfamily true, false\\
       \texttt{twoside}& \ttfamily true, false
     \end{tabularx}
   \end{tcolorbox}
