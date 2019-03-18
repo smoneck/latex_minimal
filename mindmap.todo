@@ -1,0 +1,43 @@
+# Fundamental Packages
+
+  - amsmath, amsthm, amssymb
+  - tabularx
+  - multicol?
+  - blindtext
+  - colorx?
+  - graphicx
+  - siunitx
+  - csquotes
+  - inputenc
+  - babel
+  - hyperref, cleveref
+  - booktabs
+  - biblatex
+
+# Topics
+
+  - Figures / Tables
+  - Math
+  - Grafiken
+  - Essenz do(s/nts)
+
+# Ideas
+
+  - Further packages
+    + [Chemie]
+      > http://www.mychemistry.eu/known-packages/
+      ~ chemfig: Molekuele
+        > https://tex.stackexchange.com/a/53572/37806
+      ~ mhchem: Formeln und Reaktionen
+    + [Graphen und Diagramme]
+      ~ tikz
+  - LaTeX Thesis Template
+    > http://www.matthiaspospiech.de/latex/templates/thesis/
+    > http://www.matthiaspospiech.de/download/latex/vorlagen/thesis/TemplateDocumentation.pdf
+  - Inconspicuous hyperlinks
+
+# Notes
+
+## LaTeX Thesis Template
+
+Complete framework for larger thesis (bachelor, master, phd-thesis, etc.) with a focus on natural sciences.
