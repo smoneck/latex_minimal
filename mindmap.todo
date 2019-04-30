@@ -31,6 +31,10 @@
       ~ mhchem: Formeln und Reaktionen
     + [Graphen und Diagramme]
       ~ tikz
+      ~ pgfplots
+        > https://tex.stackexchange.com/a/3630/37806
+    + [Algorithmik]
+      ~ algorithm2e
   - LaTeX Thesis Template
     > http://www.matthiaspospiech.de/latex/templates/thesis/
     > http://www.matthiaspospiech.de/download/latex/vorlagen/thesis/TemplateDocumentation.pdf
